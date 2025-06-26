@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@theme {
+    --font-pop: "Poppins";
+}
+
+.swiper {
+    @apply pb-[50px]
+}
+
+.swiper-button-next {
+    right: 2;
+}
+
+.swiper-button-prev {
+    left: 2px;
+}
+
+.swiper-button-prev::after {/* aqui pega o icone da seta do swiper */
+    content: '\f060';/* troca o icone */
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.swiper-button-next::after {
+    content: '\f061';
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
+    font-size: 30px;
+}
+
+/* 
+    content: '\f060';                            troca o icone 
+    font-family: 'Font Awesome 5 free';          coloca a familia de fonte
+    font-weight: 900;                            para funcionar dinife o weight
+*/
