@@ -4,10 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./output.css" rel="stylesheet">
-    <link href="./input.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- 
+        ESTIOLOS SWIPER ANTES DA NOSSOS ESTILOS    (ESTILOS POSTERIORES SOBREESCREVEM      [ESCREVEM POR CIMA]) 
+
+        <link href="./output.css" rel="stylesheet">
+        <link href="./input.css" rel="stylesheet">
+    -->
+
+    <!-- estilos quem vem depois em hierarquia tem prioridade -->
+    <style>
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper {/* container completo */
+            width: 700px;
+            height: 300px;
+            padding: 40px 0px;  
+
+        }
+    
+        #ft1 {
+            background-image: url('images/estrada.jpg');
+            background-size: cover;
+        }
+        
+        #ft2 {
+            background-image: url('images/ft2.jpg');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #ft3 {
+            background-image: url('images/ft3.jpg');
+            background-size: cover;
+        }
+        
+        #ft4 {
+            background-image: url('images/ft4.jpg');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #ft5 {
+            background-image: url('images/ft5.jpg');
+            background-size: cover;
+        }
+
+        #ft6 {
+            background-image: url('images/ft6.jpg');
+            background-size: cover;
+            background-position: center right;
+        }
+
+        img {
+            object-fit: cover;
+        }
+        </style>
 </head>
 <body>
-    <!-- começar um novo carrosel com apenas imagens -->
+
+    <div class="swiper pb-[50px]">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" id="ft1"></div>
+            <div class="swiper-slide" id="ft2"></div>
+            <div class="swiper-slide" id="ft3"></div>
+            <div class="swiper-slide" id="ft4"></div>
+            <div class="swiper-slide" id="ft5"></div>
+            <div class="swiper-slide" id="ft6"></div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+ 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="configs.js"></script>
 </body>
 </html>
