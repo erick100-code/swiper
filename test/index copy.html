@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="./input.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         body {
             height: 100vh;
             width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 0px;
             padding: 0px;
-
-            font-family: Arial, Helvetica, sans-serif;
             position: relative;
         }
 
@@ -24,7 +27,6 @@
         .swiper-slide {
             background-image: url('images/estrada.jpg');
             background-size: cover;
-            background-position: center;
         }
 
         .autoplay-progress {
@@ -35,12 +37,11 @@
             width: 48px;
             height: 48px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
             font-weight: bold;
-            
-            font-size: 25px;
-            color: rgb(15, 15, 173);
+            color: white;
         }
 
         .autoplay-progress svg {
@@ -52,19 +53,14 @@
             z-index: 10;
             width: 100%;
             height: 100%;
-            fill: none;
             stroke-width: 4px;
-            stroke: rgb(0, 58, 182);
-
+            stroke: black;
+            fill: none;
             stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
             stroke-dasharray: 125.6;
             transform: rotate(-90deg);
         }
 
-
-        img {
-            object-fit: cover;
-        }
     </style>
 </head>
 <body>
@@ -73,27 +69,65 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide" style="background-image: url('images/estrada.jpg');">slide1</div>
-            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');">slide2</div>
-            <div class="swiper-slide" style="background-image: url('images/ft4.jpg');">slide3</div>
-            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');">slide4</div>
-            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');">slide5</div>
-            
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
             
         </div>
-  
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
+
         <div class="autoplay-progress">
-            <svg viewBox="0 0 48 48">
+            <svg>
                 <circle cx="24" cy="24" r="20"></circle>
             </svg>
             <span></span>
         </div>
+        
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="configs.js"></script>
+
+    <script>
+        const circle = document.querySelector('.autoplay-progress svg')
+        const txt = document.querySelector('.autoplay-progress span')
+
+        const swiper = new Swiper('.swiper', {
+            
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+            },
+
+            direction: 'horizontal',
+            spaceBetween: 30,
+            centeredSlide: true,
+
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+
+            on: {
+                autoplayTimeLeft(s, time, progress) {
+                    circle.style.setProperty("--progress" , 1 - progress)
+                    txt.textContent = `${Math.ceil(time / 1000)}s`
+                },
+
+            },
+
+
+        });
+    </script>
 </body>
 </html>
