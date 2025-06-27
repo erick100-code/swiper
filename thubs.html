@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+
+            background-color: black;
+        }
+
+
+        .swiper-slide {
+            background-image: url('images/estrada.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySwiper1 {
+            height: 80%;
+            width: 100%;
+        }
+
+        .mySwiper2 {
+            height: 20%;
+            padding: 10px 0px;
+            box-sizing: border-box;
+        }
+
+        .mySwiper2 .swiper-slide{
+            opacity: 0.4;
+            width: 25%;
+            height: 100%;
+        }
+
+        .mySwiper2 .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper mySwiper1">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image: url('images/ft2.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft4.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            
+        </div>
+        
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+    </div>
+    
+    <div class="swiper mySwiper2">  
+
+        <div class="swiper-wrapper">
+    
+            <div class="swiper-slide" style="background-image: url('images/ft2.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft4.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            
+        </div>
+
+    </div>  
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        
+        const swiper2 = new Swiper('.mySwiper2', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            freeMode: true,
+            watchSlidesProgress: true,
+            rewind: true,
+        })
+        
+        
+        const swiper = new Swiper('.mySwiper1', {
+        
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+            },
+            
+            thumbs: {
+                swiper: swiper2,
+            },
+
+            rewind: true,
+
+        });
+        </script>
+</body>
+</html>
