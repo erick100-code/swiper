@@ -39,9 +39,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            color: white;
+            font-size: 22px;
         }
 
         .autoplay-progress svg {
+            font-family: 'Courier New', Courier, monospace;
+        
+       
             --progress: 0;
 
             position: absolute;
@@ -51,7 +57,7 @@
             height: 100%;
 
             fill: none;
-            stroke: black;
+            stroke: rgb(0, 0, 133);
             stroke-width: 4px;
             stroke-dasharray: 157;
             stroke-dashoffset: calc(157 * (1 - var(--progress)));
