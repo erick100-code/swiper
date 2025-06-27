@@ -9,21 +9,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         body {
+            padding: 0px;
+            margin: 0px;
             height: 100vh;
             width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .swiper {/* container completo */
-            width: 500px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
         }
 
         .swiper-slide {
             background-image: url('images/estrada.jpg');
             background-size: cover;
+        }
+
+        .autoplay-progress {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .autoplay-progress svg {
+            --progress: 0;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            fill: none;
+            stroke: black;
+            stroke-width: 4px;
+            stroke-dasharray: 157;
+            stroke-dashoffset: calc(157 * (1 - var(--progress)));
+            transform: rotate(-90deg);
         }
     </style>
 </head>
@@ -44,6 +76,12 @@
   
         <div class="swiper-pagination"></div>
 
+        <div class="autoplay-progress">
+            <svg>
+                <circle r="25" cx="29" cy="29"></circle>
+            </svg>
+            <span></span>
+        </div>
  
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -53,6 +91,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
+        const circlesvg = document.querySelector('.autoplay-progress svg')
+        const spant = document.querySelector('.autoplay-progress span')
         const swiper = new Swiper('.swiper', {
         
             navigation: {// setas de navegação
@@ -65,7 +105,19 @@
             },
             
             direction: 'horizontal',
+            centeredSlides: true,
+            
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
 
+            on: {
+                autoplayTimeLeft(s, time, progress) {// propriedades do autoplay
+                    circlesvg.style.setProperty('--progress', 1 - progress)
+                    spant.textContent = `${Math.ceil(time / 1000)}s`
+                },
+            },
         });
     </script>
 </body>
