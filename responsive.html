@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .swiper {/* container completo */
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            background-image: url('images/estrada.jpg');
+            background-size: cover;
+           
+        }
+
+    
+
+        @media screen and (max-width: 900px) {
+            
+            .swiper-button-prev {
+                transform: rotate(90deg);
+            }
+    
+            .swiper-button-next {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+ 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+        
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+            },
+            
+            direction: 'vertical',
+
+            breakpoints: {
+                900: {
+                    direction: 'horizontal',
+                }
+            },
+
+        });
+    </script>
+</body>
+</html>
