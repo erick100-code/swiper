@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+            padding: 0px;
+            
+            background-color: black;
+        }
+
+        .swiper {/* container completo */
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="images/ft2.jpg" alt="">
+                </div>
+            </div>
+           
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="images/ft3.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-zoom-container">
+                    <img src="images/ft6.jpg" alt="">
+                </div>
+            </div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+ 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+        
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+            },
+            
+            direction: 'horizontal',
+            zoom: true,
+        });
+    </script>
+</body>
+</html>
