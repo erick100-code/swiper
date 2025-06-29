@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+            padding: 0px;
+            
+            background-color: black;
+        }
+
+        .swiper {/* container completo */
+            width: 100%;
+            height: 100%;
+            margin: 30px 0px;
+        }
+
+        .swiper-slide {
+            background-image: url('images/estrada.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper mySwiper1">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft3.jpg');"></div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+    </div>2
+
+    <div class="swiper mySwiper2">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft6.jpg');"></div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+    </div>
+    <div class="swiper mySwiper3">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            <div class="swiper-slide" style="background-image: url('images/ft5.jpg');"></div>
+            
+        </div>
+  
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.mySwiper1', {
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+            
+            direction: 'horizontal',
+            spaceBetween: 50,
+            grabCursor: true,
+
+
+        });
+
+        const swiper2 = new Swiper('.mySwiper2', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+                // inutil come type fraction > clickable: true,
+            }, 
+            
+            spaceBetween: 300,
+            grabCursor: true,
+        })
+
+        const swiper3 = new Swiper('.mySwiper3', {
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'progressbar',
+            },
+
+            grabCursor: true,
+            spaceBetween: 30,
+        })
+    </script>
+</body>
+</html>
