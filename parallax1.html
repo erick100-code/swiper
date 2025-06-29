@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body, html {
+            height: 100%;
+
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+
+            color: black;
+        }
+
+        .swiper {/* container completo */
+            width: 600px;
+            height: 400px;
+            position: relative;
+
+            background-color: black;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 130%;
+            z-index: -30;
+            object-fit: cover;
+
+            background-image: url('images/ft3.jpg');
+            background-position: center center;
+            background-size: cover;
+            -webkit-background-size:cover,
+        }
+        
+        .swiper-slide {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 40px 60px;
+        }
+
+        .swiper-slide .text {
+            max-width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+
+        <div class="parallax-bg" data-swiper-parallax="-23%">
+
+        </div>
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">slide 1</div>
+                <div class="subtitle" data-swiper-parallax="-200">subitle</div>
+                <div class="text" data-swiper-parallax="-100">
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, soluta. Esse temporibus doloremque non optio, delectus numquam, obcaecati, amet aut iusto doloribus voluptatum iure? Impedit voluptatum unde deserunt error eveniet! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam labore quibusdam, maiores excepturi dolor eos earum sint inventore quod eius dolorem numquam quia facere. Non, omnis provident. Debitis, aut earum?
+                    </p>
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">slide 2</div>
+                <div class="subtitle" data-swiper-parallax="-200">subitle</div>
+                <div class="text" data-swiper-parallax="-100">
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, soluta. Esse temporibus doloremque non optio, delectus numquam, obcaecati, amet aut iusto doloribus voluptatum iure? Impedit voluptatum unde deserunt error eveniet! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam labore quibusdam, maiores excepturi dolor eos earum sint inventore quod eius dolorem numquam quia facere. Non, omnis provident. Debitis, aut earum?
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="title" data-swiper-parallax="-300">slide 3</div>
+                <div class="subtitle" data-swiper-parallax="-200">subitle</div>
+                <div class="text" data-swiper-parallax="-100">
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, soluta. Esse temporibus doloremque non optio, delectus numquam, obcaecati, amet aut iusto doloribus voluptatum iure? Impedit voluptatum unde deserunt error eveniet! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam labore quibusdam, maiores excepturi dolor eos earum sint inventore quod eius dolorem numquam quia facere. Non, omnis provident. Debitis, aut earum?
+                    </p>
+
+                </div>
+            </div>
+        </div>
+  
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+        
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            
+            direction: 'horizontal',
+            speed: 600, 
+            parallax: true,
+            rewind: true,// quando chega em uma extremidade vai para a contraria
+        });
+    </script>
+</body>
+</html>
