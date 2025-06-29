@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+
+            background-color: black;
+        }
+
+        .swiper {/* container completo */
+            width: 100%;
+            height: 300px;
+            margin: 30px 0px;
+        }
+
+        .swiper-slide {
+            background-image: url('images/estrada.jpg');
+            background-size: cover;
+        }
+
+        .append-buttons {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0px 30px;
+        }
+
+        .append-buttons a {
+            padding: 5px 10px;
+
+            color: #006eff;
+            border: 1px solid #006eff;
+            border-radius: 5px;
+
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            
+            transition: all 0.4s ease;
+        }
+        
+        .append-buttons a:hover {
+            color: white;
+            border-color: white;
+
+            transition: all .5s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+
+    <p class="append-buttons">
+        <a href="#" class="prepend-2-slides">prepend 2 slides</a>
+        <a href="#" class="slide-1">slide 1</a>
+        <a href="#" class="slide-250">slide 250</a>
+        <a href="#" class="slide-500">slide 500</a>
+        <a href="#" class="append-slide">append slide</a>
+    </p>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {// TERMINAR OS BOTÕES!
+        
+            navigation: {// setas de navegação
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {// contadores de paginas
+                el: '.swiper-pagination',
+            },
+            
+            direction: 'horizontal',
+            slidesPerView: 3,
+            centeredSlides: true,
+            spaceBetween: 30,
+        });
+    </script>
+</body>
+</html>
