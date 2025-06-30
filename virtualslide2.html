@@ -24,82 +24,83 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
+            
             background-image: url('images/estrada.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center; 
             color: white;
 
             font-size: 2rem;
         }
-
-        .append-buttons {
+        
+        .buttons {
             text-align: center;
-      
         }
 
-        .append-buttons a {
-            padding: 5px 10px;      
-            margin: 0px 7px;
-
-            color: #006eff;
-            border: 1px solid #006eff;
+        .buttons > a {
+            padding: 5px 10px;
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
             border-radius: 5px;
+            margin: 0px 5px;
 
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
             text-decoration: none;
-            
-            transition: all 0.4s ease;
+            transition: all .5s ease-in-out;
         }
         
-        .append-buttons a:hover {
-            color: white;
-            border-color: white;
+        .buttons > a:hover {
+            color: #00ff73;
+            border-color: #00ff73;
 
-            transition: all .5s ease;
-        }
-
-        [data-swiper-slide-index="249"] {
-            background-image: url('images/ft3.jpg');
+            transition: all .5s ease-in-out;
         }
 
         [data-swiper-slide-index="0"] {
-            background-image: url('images/ft6.jpg');
+            background-image: url('images/ft3.jpg');
         }
-
-
-        [data-swiper-slide-index="499"] {
-            background-image: url('images/ft5.jpg');
+        
+        [data-swiper-slide-index="249"] {
+            background-image: url('images/ft4.jpg');
         }
-
+        
+        [data-swiper-slide-index="599"] {
+            background-image: url('images/ft2.jpg');
+        }
     </style>
 </head>
 <body>
 
     <div class="swiper">
 
-        <div class="swiper-wrapper"></div>
+        <div class="swiper-wrapper">
+
+            
+        </div>
+  
         <div class="swiper-pagination"></div>
+
+ 
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
     </div>
 
-    <p class="append-buttons">
-        <a href="#" class="prepend-2-slides">prepend 2 slides</a>
+    <p class="buttons">
+        <a href="#" class="prepend-2-slide">prepend 2 slides</a>
         <a href="#" class="slide-1">slide 1</a>
         <a href="#" class="slide-250">slide 250</a>
-        <a href="#" class="slide-500">slide 500</a>
+        <a href="#" class="slide-600">slide 600</a>
         <a href="#" class="append-slide">append slide</a>
     </p>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-
-        let prepend = 1
-        let append = 600
+    <script> 
+    
+        let prepend = 0
+        let append = 601
 
         const swiper = new Swiper('.swiper', {
         
@@ -115,50 +116,52 @@
             
             direction: 'horizontal',
             slidesPerView: 3,
-            centeredSlides: true,
             spaceBetween: 30,
+            centeredSlides: true,
             virtual: {
-                slides: (function () {
+                slides:(function () {
                     const slides = []
-                    for (let c = 0; c < 600; c++) {
-                        slides.push(`slide ${c + 1}`)
-                    }
                     
+                    for (let c = 1; c <= 600; c++) {
+                        slides.push(`slide ${c}`)
+                    }
+
                     return slides
                 })(),
             },
+
         });
 
-        document.querySelector('.slide-1').addEventListener('click', (e) => {
-            e.preventDefault()
-      
-            swiper.slideTo(0, 0)
-        })
+       
 
-        document.querySelector('.slide-250').addEventListener('click', (e) => {
+        document.querySelector('.prepend-2-slide').addEventListener('click', (e) => {
             e.preventDefault()
-        
-            swiper.slideTo(249, 0)
-        })
-
-        document.querySelector('.slide-500').addEventListener('click', (event) => {
-            event.preventDefault()
-            swiper.slideTo(499, 0)
-        })
-
-        document.querySelector('.prepend-2-slides').addEventListener('click', (e) => {
-            e.preventDefault()
-            
             swiper.virtual.prependSlide([
                 `<div>slide ${prepend--}</div>`,
-                `<div>slide ${prepend--}</div>`,
+                `<div>slide${prepend--}</div>`,
             ])
         })
 
-        document.querySelector('.append-slide').addEventListener('click', (infosEvent) => {
-            infosEvent.preventDefault()
-            swiper.virtual.appendSlide([
-                `<div>slide ${append++}</div>`
+        document.querySelector('.slide-1').addEventListener('click', (e) => {
+            e.preventDefault()
+
+            swiper.slideTo(0, 0)
+        })
+
+        document.querySelector('.slide-250').addEventListener('click', (event) => {
+            event.preventDefault()
+            swiper.slideTo(249, 0)
+        })
+
+        document.querySelector('.slide-600').addEventListener('click', (event) => {
+            event.preventDefault()
+            swiper.slideTo(599, 0)
+        })
+
+        document.querySelector('.append-slide').addEventListener('click', (e) => {
+            e.preventDefault()
+            swiper.virtual.appendSlide ([
+                `<div>slide ${append++}</div>`,
             ])
         })
     </script>
