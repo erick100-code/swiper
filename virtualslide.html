@@ -21,20 +21,26 @@
         }
 
         .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             background-image: url('images/estrada.jpg');
             background-size: cover;
+            background-position: center;
+            color: white;
+
+            font-size: 2rem;
         }
 
         .append-buttons {
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0px 30px;
+      
         }
 
         .append-buttons a {
-            padding: 5px 10px;
+            padding: 5px 10px;      
+            margin: 0px 7px;
 
             color: #006eff;
             border: 1px solid #006eff;
@@ -53,22 +59,27 @@
 
             transition: all .5s ease;
         }
+
+        [data-swiper-slide-index="249"] {
+            background-image: url('images/ft3.jpg');
+        }
+
+        [data-swiper-slide-index="0"] {
+            background-image: url('images/ft6.jpg');
+        }
+
+
+        [data-swiper-slide-index="499"] {
+            background-image: url('images/ft5.jpg');
+        }
+
     </style>
 </head>
 <body>
 
     <div class="swiper">
 
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            <div class="swiper-slide"></div>
-            
-        </div>
+        <div class="swiper-wrapper"></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -86,7 +97,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.swiper', {// TERMINAR OS BOTÕES!
+
+        let prepend = 1
+        let append = 600
+
+        const swiper = new Swiper('.swiper', {
         
             navigation: {// setas de navegação
                 nextEl: '.swiper-button-next',
@@ -95,13 +110,45 @@
 
             pagination: {// contadores de paginas
                 el: '.swiper-pagination',
+                type: 'fraction',
             },
             
             direction: 'horizontal',
             slidesPerView: 3,
             centeredSlides: true,
             spaceBetween: 30,
+            virtual: {
+                slides: (function () {
+                    const slides = []
+                    for (let c = 0; c < 600; c++) {
+                        slides.push(`slide ${c + 1}`)
+                    }
+                    return slides
+                })(),
+            },
         });
+
+        document.querySelector('.slide-1').addEventListener('click', (e) => {
+            e.preventDefault()
+      
+            swiper.slideTo(0, 0)
+        })
+
+        document.querySelector('.slide-250').addEventListener('click', (e) => {
+            e.preventDefault()
+        
+            swiper.slideTo(249, 0)
+        })
+
+        document.querySelector('.slide-500').addEventListener('click', (event) => {
+            event.preventDefault()
+            swiper.slideTo(499, 0)
+        })
+
+        document.querySelector('.prepend-2-slides').addEventListener('click', (e) => {
+            e.preventDefault()
+            swiper.prependS
+        })
     </script>
 </body>
 </html>
