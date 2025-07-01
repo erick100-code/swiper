@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+        }
+
+        .swiper {/* container completo */
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide:not(.menu) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #444;
+            color: white;
+        
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .menu {
+            min-width: 100px;
+            width: 70%;
+            max-width: 320px;
+            padding: 20px;
+
+            background-color: #00c3ff;
+        } 
+
+
+        .content .cx-button {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            padding: 15px;
+
+            background-color: #00c3ff;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cx-button .bar:nth-of-type(1) {margin-top: 0px;}
+
+        .cx-button .bar:nth-of-type(3) {margin-bottom: 0px;}
+
+        .cx-button .bar {
+            margin: 10px auto;
+            height: 5px;
+            width: 50px;
+            display: block;
+
+            background-color: white;
+            border-radius: 10px;
+
+            transition: .3s;
+        }
+
+        
+
+        .cx-button:hover .bar:nth-of-type(1) {
+            transform: translateY(1.5px) rotate(-4.5deg);
+        }
+
+
+        .cx-button:hover .bar:nth-of-type(3) {
+            transform: translateY(-1.5px) rotate(4.5deg);
+        }
+
+        /* round two fight */
+
+        .cross .bar:nth-of-type(1) {
+            transform: translateY(15px) rotate(-45deg);
+        }
+
+        .cross .bar:nth-of-type(2) {
+            opacity: 0;
+        }
+
+        .cross .bar:nth-of-type(3) {
+            transform: translateY(-15px) rotate(45deg);
+        }
+
+        .cross:hover .bar:nth-of-type(1) {
+            transform: translateY(13.5px) rotate(-40.5deg);
+        }
+
+        .cross:hover .bar:nth-of-type(2) {
+            opacity: 0.2;
+        }
+
+        .cross:hover .bar:nth-of-type(3) {
+            transform: translateY(-13.5px) rotate(40.5deg);
+        }
+        
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .conteudo a {
+            padding: 10px 20px;
+
+            background: blue;
+            color: white;
+            border-radius: 5px;
+
+            text-decoration: none;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .conteudo a:hover {
+            background-color: rgb(100, 100, 255);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide menu"><div class="conteudo">
+                <a href="#">side</a>
+                <a href="#">bar</a>
+                <a href="#">menu</a>
+            </div></div>
+            <div class="swiper-slide content">
+                <div class="cx-button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                content slide
+            </div>
+           
+        </div>
+  
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const menubtn = document.querySelector('.cx-button')
+
+        var openMenu = function () {
+            swiper.slidePrev()
+        }
+
+        const swiper = new Swiper('.swiper', {
+
+            direction: 'horizontal',
+            slidesPerView: 'auto',
+            resistanceRatio: 0,
+            initialSlide: 1,// inicia no 1 slide
+            slideToClickedSlide: true,
+
+            on : {
+                slideChangeTransitionStart: function () {
+                    var slider = this
+
+                    if (slider.activeIndex === 0) { 
+                        menubtn.classList.add('cross')
+                        menubtn.removeEventListener('click', openMenu, true)
+                    } else {
+                        menubtn.classList.remove('cross')
+                    }
+                },
+
+                slideChangeTransitionEnd: function () {
+                    var atualS = this
+
+                    if (atualS.activeIndex  === 1) {
+                        menubtn.addEventListener('click', openMenu, true)
+                    } 
+                }
+
+            }
+
+        });
+    </script>
+</body>
+</html>
