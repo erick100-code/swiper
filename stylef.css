@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+
+    
+}
+
+div#ct1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+
+    border: 2px solid red;
+    background-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+.mySwiper1 {
+    width: 600px;
+    height: auto;
+
+    color: white;
+}
+
+.mySwiper1 .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mySwiper1 .swiper-slide:nth-of-type(1) {
+    background-image: url('images/ft2.jpg');
+    height: 300px;
+}
+.mySwiper1 .swiper-slide:nth-of-type(2) {
+    background-image: url('images/ft3.jpg');
+    height: 500px;
+}
+.mySwiper1 .swiper-slide:nth-of-type(3) {
+    background-image: url('images/ft4.jpg');
+    height: 340px;
+}
+.mySwiper1 .swiper-slide:nth-of-type(4) {
+    background-image: url('images/ft5.jpg');
+    height: 500px;
+}
+.mySwiper1 .swiper-slide:nth-of-type(5) {
+    background-image: url('images/ft6.jpg');
+    height: 200px;
+}
+
+.mySwiper1 .swiper-slide:nth-of-type(6) {
+    background-image: url('images/estrada.jpg');
+    height: 500px;
+}
+
+/* 
+.
+.
+.
+.
+.
+.                         [TWO PAGE] 
+.
+.
+.
+.
+
+*/
+div#ct2 {
+    height: 100vh;
+    padding: 10px;
+    padding-top: 50px;
+    padding-right: 30px;
+
+    background-color: black;
+}
+
+.mySwiper2 {
+    margin-top: 50px;
+    height: 300px;
+    
+    color: white;
+}
+
+.mySwiper2 .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('images/estrada.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonsadd {
+    margin-top: 40px;
+    
+    text-align: center;
+}
+
+.buttonsadd a {
+    margin: 0px 10px;
+    padding: 5px 10px;
+
+    color: springgreen;
+    border: 1px solid springgreen;
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
+    transition: all 1s ease;
+}
+
+.buttonsadd a:hover {
+    border-color: red;
+    color: red;
+    box-shadow: 0px 0px 40px red;
+
+    transition: all .5s ease-in-out;
+}
+
+div.ct3 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid red;
+    border-left: none;
+    border-right: none;
+}
+
+.mySwiper3 {
+    height: 400px;
+    width: 400px;
+}
+
+.mySwiper3 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mySwiper3 .swiper-slide:nth-of-type(1){background-image: url('images/ft2.jpg');}
+.mySwiper3 .swiper-slide:nth-of-type(2){background-image: url('images/ft3.jpg');}
+.mySwiper3 .swiper-slide:nth-of-type(3){background-image: url('images/ft4.jpg');}
+.mySwiper3 .swiper-slide:nth-of-type(4){background-image: url('images/ft5.jpg');}
+.mySwiper3 .swiper-slide:nth-of-type(5){background-image: url('images/ft6.jpg');}
+
+
+div#ct4 {
+    height: 100vh;
+}
+
+.mySwiper4 {
+    height: 300px;
+    width: 300px;
+}
