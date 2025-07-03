@@ -244,7 +244,7 @@ div#ct4 {
     width: 600px;
     display: block;
 
-    background-color: blue;
+  
 }
 
 
@@ -252,8 +252,7 @@ div#ct4 {
     display: none;
     height: 400px;
     width: 600px;
-    
-    background-color: red;
+
 }
 
 .mySwiperFlip{
@@ -261,14 +260,14 @@ div#ct4 {
     height: 400px;
     width: 600px;
 
-    background-color: greenyellow;
+
 }
 .mySwiperFade{
     display: none;
     height: 400px;
     width: 600px;
 
-    background-color: purple;
+
 }
 
 .mySwiperCreative{
@@ -276,7 +275,7 @@ div#ct4 {
     height: 400px;
     width: 600px;
     
-    background-color: cyan;
+ 
 }
 
 .mySwiperCards {
@@ -284,12 +283,184 @@ div#ct4 {
     height: 400px;
     width: 600px;
     
-    background-color: gold;
+
 }
 
-/*
-    1- texto do minecraft
-    2- parallax
-    3- thumbs galery
-*/
+div#ct5 {
+    height: 100vh;
+    width: 100vw;
 
+    background-color: black;
+}
+
+
+.mySwiperPai {
+    width: 100%;
+    height: 80%;
+
+}
+
+.mySwiperPai .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+}
+
+.mySwiperFilho .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    color: wheat;
+    opacity: .4;
+}
+
+.mySwiperFilho .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.mySwiperPai .swiper-slide:nth-of-type(1) {
+    background-image: url('images/ft2.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(2) {
+    background-image: url('images/ft3.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(3) {
+    background-image: url('images/ft4.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(4) {
+    background-image: url('images/ft5.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(5) {
+    background-image: url('images/ft6.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(6) {
+    background-image: url('images/estrada.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(7) {
+    background-image: url('images/fundo.jpg');
+}
+.mySwiperPai .swiper-slide:nth-of-type(8) {
+    background-image: url('images/pexels-chloekalaartist-1043474.jpg');
+    background-position: center;
+}
+
+.mySwiperFilho {
+    box-sizing: border-box;
+    height: 20%;
+    padding: 20px 0px;
+   /* margin: 10px 0px; */
+}
+
+.mySwiperFilho .swiper-slide {
+    width: 15%; 
+}
+
+.mySwiperFilho .swiper-slide:nth-of-type(1) {
+    background-image: url('images/ft2.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(2) {
+    background-image: url('images/ft3.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(3) {
+    background-image: url('images/ft4.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(4) {
+    background-image: url('images/ft5.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(5) {
+    background-image: url('images/ft6.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(6) {
+    background-image: url('images/estrada.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(7) {
+    background-image: url('images/fundo.jpg');
+}
+.mySwiperFilho .swiper-slide:nth-of-type(8) {
+    background-image: url('images/pexels-chloekalaartist-1043474.jpg');
+    background-position: center;
+}
+
+#ct6 {
+    height: 100vh;
+}
+
+.mySwiperMine {
+    height: 300vh;
+    width: 100%;
+
+}
+
+.mySwiperMine .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 150px 0px;
+    background-image: url('images/terrab.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+.mySwiperMine .swiper-slide p {
+    width: 600px;
+
+    text-align: justify;
+    font-size: 20px;
+}
+
+#semifinal {
+    padding: 100px;
+    height: 100vh;
+    background-color: black;
+}
+
+.mySwipersf {
+    height: 100%;
+    width: 100%;
+
+    background-color: #444;
+    color: white;
+}
+
+.mySwipersf .swiper-slide {
+    padding: 30px;
+    height: auto;
+    box-sizing: border-box;
+
+    font-size: 18px;
+}
+
+#finalWS {
+    height: 100vh;
+    width: 100vw;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mySwiperF {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.swiper-bg-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130%;
+    height: 100%;
+
+    background-image: url('images/ft3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.mySwiperF .swiper-slide p {
+    width: 500px;
+}
+
+/*   
+    2- parallax
+  
+*/

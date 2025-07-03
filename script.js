@@ -267,3 +267,54 @@ const swiper4 = new Swiper('.mySwiperSlide', {
     keyPress: true,
     spaceBetween: 30,
 })
+
+ const swiper11 = new Swiper('.mySwiperFilho', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    freeMode: true,
+    grabCursor: true,
+    
+    watchSlidesProgress:true,
+ })
+
+ const swiper10 = new Swiper('.mySwiperPai', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    thumbs: {
+        swiper: swiper11,
+    },
+
+    resistanceRatio: 0,
+
+    spaceBetween: 10,
+})
+
+const swiper12 = new Swiper('.mySwiperMine', {
+    autoplay:{
+        delay:1,
+    },
+    resistanceRatio:0,
+    freeMode: true,
+    direction: 'vertical',
+    speed: 55000,
+    mousewheel: true,
+})
+
+const swiper13 = new Swiper('.mySwipersf', {
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+ 
+    slidesPerView: 'auto',
+    direction: 'vertical',
+    freeMode: true,
+    mousewheel: true,
+})
+
+const swiperfinal = new Swiper('.mySwiperF', {
+    parallax: true,
+    speed: 600,
+})
