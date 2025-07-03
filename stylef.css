@@ -6,12 +6,12 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-
+ 
     
 }
 
 div#ct1 {
-    height: 100vh;
+    height: 150vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +93,12 @@ div#ct2 {
 
     background-color: black;
 }
+@media (orientation:landscape) {
+    div#ct2 {
+        padding-bottom: 70px;
+    }
+}
+ 
 
 .mySwiper2 {
     margin-top: 50px;
@@ -117,12 +123,16 @@ div#ct2 {
 
 .buttonsadd {
     margin-top: 40px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+
     text-align: center;
 }
 
 .buttonsadd a {
-    margin: 0px 10px;
     padding: 5px 10px;
 
     color: springgreen;
@@ -145,6 +155,7 @@ div#ct2 {
 }
 
 div.ct3 {
+    padding: 40px 0px;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -175,14 +186,20 @@ div.ct3 {
 
 
 div#ct4 {
+    padding-top: 70px;
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;    
+    gap: 70px 0px;
     
     background-color: black;
+}
+
+#ct4 .swiper{
+    max-width:  60vw;
 }
 
 #ct4 .swiper-slide{
@@ -380,39 +397,19 @@ div#ct5 {
     background-position: center;
 }
 
-#ct6 {
-    height: 100vh;
-}
 
-.mySwiperMine {
-    height: 300vh;
-    width: 100%;
 
-}
-
-.mySwiperMine .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 150px 0px;
-    background-image: url('images/terrab.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-}
-
-.mySwiperMine .swiper-slide p {
-    width: 600px;
-
-    text-align: justify;
-    font-size: 20px;
-}
 
 #semifinal {
-    padding: 100px;
+    padding: 30px;
     height: 100vh;
     background-color: black;
+}
+
+@media screen and (min-width:1100px){
+    #semifinal {
+        padding: 100px;
+    }
 }
 
 .mySwipersf {
@@ -421,6 +418,9 @@ div#ct5 {
 
     background-color: #444;
     color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
 }
 
 .mySwipersf .swiper-slide {
@@ -435,12 +435,13 @@ div#ct5 {
     height: 100vh;
     width: 100vw;
 
+    background-color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .mySwiperF {
     height: 100%;
-    width: 100%;
+    width: 95vw;
     padding: 10px;
 }
 

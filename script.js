@@ -146,6 +146,8 @@ let swiper7
 let swiper8
 let swiper9
 
+
+
 function calc(param) {
     swiperss.forEach(swip => {
         swip.style.display = 'none'
@@ -292,16 +294,6 @@ const swiper4 = new Swiper('.mySwiperSlide', {
     spaceBetween: 10,
 })
 
-const swiper12 = new Swiper('.mySwiperMine', {
-    autoplay:{
-        delay:1,
-    },
-    resistanceRatio:0,
-    freeMode: true,
-    direction: 'vertical',
-    speed: 55000,
-    mousewheel: true,
-})
 
 const swiper13 = new Swiper('.mySwipersf', {
     scrollbar: {
