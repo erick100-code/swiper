@@ -176,9 +176,120 @@ div.ct3 {
 
 div#ct4 {
     height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;    
+    
+    background-color: black;
 }
 
-.mySwiper4 {
-    height: 300px;
-    width: 300px;
+#ct4 .swiper-slide{
+    background-size: cover;
+    background-position: center;
 }
+
+#ct4 .swiper-slide:nth-of-type(1) {
+    background-image: url('images/ft2.jpg');
+}
+#ct4 .swiper-slide:nth-of-type(2) {
+    background-image: url('images/ft3.jpg');
+}
+#ct4 .swiper-slide:nth-of-type(3) {
+    background-image: url('images/ft4.jpg');
+}
+#ct4 .swiper-slide:nth-of-type(4) {
+    background-image: url('images/ft5.jpg');
+}
+#ct4 .swiper-slide:nth-of-type(5) {
+    background-image: url('images/ft6.jpg');
+}
+#ct4 .swiper-slide:nth-of-type(6) {
+    background-image: url('images/estrada.jpg');
+}
+
+.effectbtn {
+    padding: 5px 10px;
+
+    border-radius: 5px;
+    border: 1px solid gold;
+    background-color: transparent;
+    color: white;
+
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: none;
+
+    cursor: pointer;
+    transition:all .5s ease-in-out;
+}
+
+.effectbtn:hover {
+    text-shadow: 0px 0px 5px gold;
+    box-shadow: 0px 0px 30px gold;
+
+    transition:all  .5s ease-in-out;
+}
+
+.effectbtn.muda {
+    text-shadow: 0px 0px 5px red;
+    box-shadow: 0px 0px 30px red;
+    border-color: red;
+}
+
+.mySwiperSlide{
+    height: 400px;
+    width: 600px;
+    display: block;
+
+    background-color: blue;
+}
+
+
+.mySwiperCoverflow{
+    display: none;
+    height: 400px;
+    width: 600px;
+    
+    background-color: red;
+}
+
+.mySwiperFlip{
+    display: none;
+    height: 400px;
+    width: 600px;
+
+    background-color: greenyellow;
+}
+.mySwiperFade{
+    display: none;
+    height: 400px;
+    width: 600px;
+
+    background-color: purple;
+}
+
+.mySwiperCreative{
+    display: none; 
+    height: 400px;
+    width: 600px;
+    
+    background-color: cyan;
+}
+
+.mySwiperCards {
+    display: none; 
+    height: 400px;
+    width: 600px;
+    
+    background-color: gold;
+}
+
+/*
+    1- texto do minecraft
+    2- parallax
+    3- thumbs galery
+*/
+
